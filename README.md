@@ -10,16 +10,16 @@ Maintenant je suis entrain de chercher une contrat d’apprentissage pour septem
 
 Vous trouvez sur mon profil les projets universitaires les plus intéréssants sur lesquels j'ai travaillé jusqu'à présent :
 
-### [Projet 1 : Serre Agricole Intelligente](https://github.com/momenacer/Projects/tree/main/Arduino_Projects)
+### [Projet 1 : Serre Agricole Intelligente](https://github.com/momenacer/MENACER_Mohamed/tree/main/Serre%20Agricole%20Intelligente)
 Ce projet consistait à concevoir un système qui permet de collecter en temps réel les indicateurs bioclimatiques d’une serre, basé sur l'utilisation des
 réseaux de neurones pour reconnaitre des situations contextuelles à partir des données de capteurs et les arbres de décision pour associer les actions à entreprendre 
 par le système.
 
-### [Projet 2 : Mise en place d’un banc de calibration d’une caméra thermique avec LabVIEW](https://github.com/momenacer/Projects/tree/main/Arduino_Projects)
+### [Projet 2 : Mise en place d’un banc de calibration d’une caméra thermique avec LabVIEW](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calib%20Cam%C3%A9ra%20Thermique)
 Dans ce projet, j'ai développé un système pour Mesurer la température ambiante autour d’une caméra thermique et la contrôler avec un Peltier en utilisant l’interface LabVIEW et la
 carte d’acquisition LabVIEW pour but de garantir la précision et la fiabilité des images fournies par la caméra.
 
-### [Projet 3 : Réalisation d'un robot suiveur de ligne Odometry](lien_vers_le_projet3)
+### [Projet 3 : Réalisation d'un robot suiveur de ligne Odometry](https://github.com/momenacer/MENACER_Mohamed/tree/main/Robot%20Suiveur%20Odometry)
 Ce projet avait pour objectif de concevoir un Un robot qui peut suivre une ligne noire d’une façon autonome à
 l’aide d'une programmation Odometry pour but de déplacer des produits qui ont un grand poids dans un industrie.. Le code source, les diagrammes de séquence et les rapports
 détaillés sont disponibles dans le répertoire.
