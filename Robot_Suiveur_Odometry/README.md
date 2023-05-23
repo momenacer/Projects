@@ -1,5 +1,5 @@
-# Examen : Contrôle de robot à deux roues avec Arduino et Pont H
-📝
+# Projet Odometry Suiveur de ligne 
+
 
 Notre objectif moi et mon binôme consiste à contrôler un robot à deux roues en utilisant une carte Arduino et un pont en H. Le robot est équipé de deux moteurs qui peuvent ne pas être parfaitement équilibrés, ce qui peut entraîner une déviation lorsqu'il est censé se déplacer en ligne droite. Pour compenser cela, le code a été ajusté en augmentant la vitesse d'un moteur par rapport à l'autre, ce qui permet au robot de se déplacer en ligne droite et de tourner avec précision.
 
@@ -41,7 +41,10 @@ Prenez les précautions nécessaires lors de l'assemblage et de l'utilisation du
 
 🤝  
 
-https://github.com/L3-Option-TSI-2023/Mohamed-MENACER/assets/127967325/012ac6c4-bf61-487a-85b2-c80a534c814d
+
+
+https://github.com/momenacer/MENACER_Mohamed/assets/127967325/02931a98-f556-4b52-9c17-0b3a6b6db077
+
 
 
 
