@@ -1,4 +1,4 @@
-# Banc de calibration d'une caméra thermique
+# Mise en place d'un banc de calibration d'une caméra thermique
 
 Ce projet consiste à créer un système de banc de calibration pour une caméra thermique, permettant de mesurer et de contrôler la température ambiante dans une chambre climatique. Le système utilise des composants tels que le peltier, le ventilateur, la carte Arduino, le pont H L298, le capteur de température TCN75A, ainsi que la plateforme LabVIEW pour le contrôle et l'acquisition des données.
 
@@ -8,6 +8,7 @@ Ce projet consiste à créer un système de banc de calibration pour une caméra
 - Contrôle de la température à l'aide du peltier et du ventilateur pour maintenir des conditions climatiques spécifiques
 - Utilisation de la carte Arduino et du pont H L298 pour le contrôle des composants physiques
 - Acquisition des données de température à l'aide du capteur de température TCN75A
+- La communication entre LabVIEW et la carte Arduino avec logiciel( ToolKit) LINX
 - Intégration de la plateforme LabVIEW pour le contrôle et la visualisation des données
 
 ## Configuration matérielle requise
@@ -17,14 +18,14 @@ Ce projet consiste à créer un système de banc de calibration pour une caméra
 - Ventilateur
 - Carte Arduino
 - Pont H L298
-- Capteur de température TCN75A
-- Chambre climatique
+- Capteur de température TCN75A (protocol I2C)
+- Petite Chambre climatique
 
 ## Configuration logicielle requise
 
-- LabVIEW (version X.X.X)
-- Bibliothèques Arduino (version X.X.X)
-- Autres dépendances logicielles...
+- LabVIEW 
+- Logiciel (Toolkit) LINX
+- Bibliothèques I2C
 
 ## Installation et utilisation
 
@@ -46,9 +47,12 @@ Les contributions à l'amélioration de ce projet sont les bienvenues ! Si vous 
 
 ## Auteurs
 
-- Votre nom
-- Autre contributeur (le cas échéant)
+- ***MENACER Mohamed***
+- ***Monsieur BERRY François** : Tuteur du Projet de fin de Cycle de Licence en Electronique, Energie électrique, Automatique*
 
-## Licence
 
-Ce projet est sous licence [MIT](LICENSE).
+
+
+
+https://github.com/momenacer/MENACER_Mohamed/assets/127967325/b18c8438-5aa9-4e05-971d-9a4c65f2d701
+
