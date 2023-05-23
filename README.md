@@ -1,5 +1,5 @@
 ![1682101429317](https://github.com/momenacer/Projects/assets/127967325/938f7a10-9106-4db7-a069-e10ec8208732)
-# *MENACER* *Mohamed*
+
 # Bienvenue sur mon profil GitHub !
 Jeune étudiant passionné par l’automatisation, le contrôle des systèmes et l'optimisation. J’ai une Licence en Automatique (Algérie), je prépare ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (France).
 Accepté par L'Institut Universitaire de Technologie de Nantes Parcours Interdisciplinaire en Technologies Innovantes en Alternance.
