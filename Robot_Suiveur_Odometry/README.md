@@ -1,5 +1,5 @@
-# Examen : Contrôle de robot à deux roues avec Arduino et Pont H
-📝
+# Projet Odometry Suiveur de ligne 
+
 
 Notre objectif moi et mon binôme consiste à contrôler un robot à deux roues en utilisant une carte Arduino et un pont en H. Le robot est équipé de deux moteurs qui peuvent ne pas être parfaitement équilibrés, ce qui peut entraîner une déviation lorsqu'il est censé se déplacer en ligne droite. Pour compenser cela, le code a été ajusté en augmentant la vitesse d'un moteur par rapport à l'autre, ce qui permet au robot de se déplacer en ligne droite et de tourner avec précision.
 
@@ -22,20 +22,6 @@ Notre objectif moi et mon binôme consiste à contrôler un robot à deux roues 
 
 **3**.   Téléchargez ou clonez le dépôt GitHub contenant le code source du projet.
 
-## Configuration du code
-📝
-
-Dans le fichier du code source, ajustez les valeurs de vitesse des moteurs pour compenser le déséquilibre. Par exemple, si l'un des moteurs est plus faible, augmentez sa vitesse par rapport à l'autre.
-
-## Cahier des charges
-📝
-
-Le robot doit respecter les spécifications suivantes :
-
-**-** Lorsque le robot tourne à droite ou à gauche, les clignotants doivent être activés, ce qui signifie que deux LED jaunes (une à droite et une à gauche) clignoteront un peu avant le virage, puis s'arrêteront à la fin du virage.
-**-** Lorsque le robot ralentit, trois LED rouges doivent s'allumer.
-**-** Une LCD doit être utilisée pour afficher l'état du robot sur la première ligne de l'écran.
-
 ## Compilation et téléversement
 📝
 
@@ -55,7 +41,10 @@ Prenez les précautions nécessaires lors de l'assemblage et de l'utilisation du
 
 🤝  
 
-https://github.com/L3-Option-TSI-2023/Mohamed-MENACER/assets/127967325/012ac6c4-bf61-487a-85b2-c80a534c814d
+
+
+https://github.com/momenacer/MENACER_Mohamed/assets/127967325/02931a98-f556-4b52-9c17-0b3a6b6db077
+
 
 
 
