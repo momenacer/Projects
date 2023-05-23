@@ -1,8 +1,8 @@
 #define SOILSENSOR A0
 namespace soilMoise {
 // consider the folowing variable as private .
-int min = 270 ;
-int max = 1010 ;
+int min = 200;
+int max =740 ;
 void set() {
   // function that must be called in the principal set method .
   pinMode(SOILSENSOR , INPUT);
@@ -20,6 +20,7 @@ float get() {
   }
   value = value - min ;
   return 100 - ( value * 100.0 / (max - min )) ;
+      
 
 
 }

@@ -1,14 +1,16 @@
-#define WATERLEVELSENSOR A1
-namespace waterLvl {
-// consider the folowing variable as private .
-int min =  60;
-int max = 450 ;
+#define GAZPIN A2
+
+namespace gazSensor {
+
+int min = 620 ;
+int max = 720 ;
 void set() {
   // function that must be called in the principal set method .
-  pinMode(WATERLEVELSENSOR , INPUT);
+  pinMode(GAZPIN , INPUT);
 }
 float get() {
-  float  value = analogRead(WATERLEVELSENSOR);
+  // retunr the moiseture pourcentage
+  float  value = analogRead(GAZPIN);
 
     if (value < min)
     {
@@ -19,7 +21,6 @@ float get() {
     }
     value = value - min ;
     return  ( value * 100.0 / (max - min )) ; 
-     
 
 }
 }

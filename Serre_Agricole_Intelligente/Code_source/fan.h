@@ -1,4 +1,3 @@
-// the pin act on a relay
 #define FANPIN 9
 namespace fan{
 void on() {
