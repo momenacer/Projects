@@ -1,86 +1,59 @@
-# Projet Odometry Suiveur de ligne 
+# Conversion des anneaux de couleur des résistances
 
-L'objectif du projet était la réalisation d'une application qui convertisse les anneaux de couleur des
-résistances en sa valeur numérique et inversement.  
+Ce projet est une application développée avec LabVIEW qui permet de convertir les anneaux de couleur des résistances en valeurs numériques et vice versa. L'application fournit une interface conviviale où les utilisateurs peuvent entrer les couleurs des anneaux ou les valeurs numériques pour obtenir le résultat de conversion correspondant.
 
-Ça commencée d'après un plaint d'une plateforme de commerce de composants électroniques qu'elle
-a un mal à l'aise avec les clients qui n'arrivent pas bien à faire comprendre exactement le type de résistance
-qu'ils veulent. LabVIEW, le logiciel utilisé qui nous a permet de construire cette application en utilisant des
-Cases structures des Events et les Séquentielles pour bien écrire notre programme.
+## Fonctionnalités
 
-## Configuration matérielle
-📝
+- Conversion des couleurs des anneaux en valeurs numériques :
+  - Saisissez les couleurs des anneaux de résistance pour obtenir la valeur numérique correspondante.
+  - Utilisez les règles standard de conversion des résistances pour calculer la valeur numérique.
 
-Notre projet se constitue de deux sous VIs qui seront exploité au sein d'un VI principal qui permettra
-de sélectionner l'opération de conversion voulue après que l'opérateur se soit identifié. Avec la possibilité
-de faire plusieurs conversions de suite.  
-  
-On a utilisé comme des fonctions particulières :  
-  
-- Le modulo dans notre sous VI qui nous permet de citer une couleur pour chaque numéro.
-- Un différent appel des sous VI d’après le VI principal, on a utilisé directement Path pour
-appeler un sous VI.
-- Pour mieux comprendre notre programme et pour qu’il soit plus structuré on a utilisé des
-LAYOUTs qui nous facilite d’aller d’une page à une autre.
-- Un stop der programme plus un message display lors 3 fausse essayes d’identification.
-## Configuration logicielle
+- Conversion des valeurs numériques en couleurs des anneaux :
+  - Entrez une valeur numérique pour obtenir les couleurs des anneaux correspondantes.
+  - Divisez la valeur en parties significatives et associez chaque partie à une couleur spécifique.
 
-📝
-Un VI principal qui nécessite une identification pour accéder à une page qui nous donne le choix entre deux
-opérations, soit une conversion Valeur à une couleur soit une Valeur à une Couleur. Avec chaqu’un des
-opérations est programmées dans un Sous VI. Donc on a fini par avoir deux Sous VI et un VI principal 
-    
-1/ Le choix de conversion Valeur à une couleur (SV1), permet à l’opérateur de :
-- Tapez une Valeur décimale.
-- Sélectionner un Multiplicateur.
-- Sélectionner une Tolérance.
-- Sélectionner un Coefficient thermique.
-Après la saisie et la sélection des valeurs un bouton nommé « Color code » apparaitre qui exécute la
-conversion et affiche le code couleur correspondant.   
+## Captures d'écran
 
-2/ Le choix de conversion Couleur à une Valeur (SV2), permet à l’opérateur de :
-- Saisir séquentiellement la couleur de 6 anneaux.
-Après le choix de la 6
-ème couleur de la résistance un bouton nommé « Résistance value » apparaitre qui
-exécute la conversion et affiche la valeur de la résistance sous la forme :
-‘’ ( Rnominale ± tolérance )multiple Ω /Coeff. Temp ‘’   
+*Interface utilisateur - Conversion des couleurs en valeurs numériques*  
 
-3/ Quelques Propriétés qu’on a développées :
-- Après 3 essayes d’identification si le nom ou prénom ou le mot de passe sont incorrecte le
-programme s’arrêtera tout seul.
-- Si l’identification était correcte une LED nommé ‘’ Login & Password ‘’ s’allumera en verte.
-- Si l’identification était correcte un affichage apparaitre de forme ‘’ Bienvenue !
-@nom_de_l_opérateur ‘’.
-- Un bouton qui permet à l’opérateur de faire plusieurs conversions.
-- Un bouton qui permet de « Déconnecter »
-- Un bouton qui permet de stopper le programme en retournant à la première page.  
-
-## Compilation et téléversement
-📝
-
-Sélectionnez le type de carte Arduino et le port série appropriés dans l'IDE Arduino. Compilez le code et vérifiez s'il y a des erreurs. Si la compilation est réussie, téléversez le code sur la carte Arduino.
-
-## Utilisation
-📝
-
-Assurez-vous que le robot est correctement assemblé et que les moteurs sont alimentés. Placez le robot sur une surface plane, allumez-le et observez son comportement. Si le robot dévie lorsqu'il est censé se déplacer en ligne droite, ajustez les valeurs de vitesse dans le code pour obtenir un déplacement plus précis.
-
-## Avertissement
-
-🤝  
-
-Prenez les précautions nécessaires lors de l'assemblage et de l'utilisation du robot. Éteignez toujours le robot avant de modifier ou de travailler sur les connexions électriques pour éviter les risques de courts-circuits ou de chocs électriques. Soyez conscient de votre environnement et des personnes autour lorsque le robot est en mouvement.
+![WhatsApp Image 2023-05-29 à 22 20 10](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/edcb3a1d-756f-431c-956b-4c2de4a75872)
 
 
-🤝  
+*Interface utilisateur - Conversion des valeurs numériques en couleurs*  
+
+![WhatsApp Image 2023-05-29 à 22 20 09 (5)](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/2e7b366f-da9d-4bd1-80b1-efaab3b8c6cb)
+
+## Installation
+
+1. Clonez ou téléchargez le dépôt du projet sur votre machine locale.
+
+2. Ouvrez le fichier de projet LabVIEW (.lvproj) avec LabVIEW.
+
+3. Compilez le projet en un exécutable autonome ou créez un fichier d'installation en suivant les instructions de LabVIEW.
+
+4. Exécutez l'application et commencez à convertir les anneaux de couleur des résistances !
+
+## Configuration système requise
+
+- LabVIEW 2019
+- Système d'exploitation : Windows 10, macOS, Linux
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
+
+1. Fork du dépôt.
+
+2. Créez une branche pour vos modifications : `git checkout -b my-feature`.
+
+3. Effectuez les modifications et effectuez les commits : `git commit -m "Add my feature"`.
+
+4. Poussez les modifications vers la branche : `git push origin my-feature`.
+
+5. Ouvrez une demande de fusion (pull request) pour que vos modifications soient examinées.
+
+## Auteur
+
+Ce projet a été développé par **MENACER** ***Mohamed***
 
 
-
-https://github.com/momenacer/MENACER_Mohamed/assets/127967325/02931a98-f556-4b52-9c17-0b3a6b6db077
-
-
-
-
-![image](https://logovtor.com/wp-content/uploads/2020/11/arduino-open-source-community-logo-vector.png)
-
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=momenacer&" alt="momenacer" /></p>
