@@ -9,7 +9,7 @@ Ce système permet de contrôler et d'automatiser l'arrosage des plantes en fonc
 
 ## Gestion du Réservoir d'Eau (Tank Management)
 Le système de gestion du réservoir d'eau surveille en temps réel le niveau d'eau disponible dans la serre. Il envoie des notifications lorsqu'il est nécessaire de remplir le réservoir et peut également être configuré pour se connecter à un système d'approvisionnement en eau automatique.
-
+ 
 ## Gestion des Précipitations (Rain Management)
 Ce système collecte des données météorologiques sur les précipitations et les utilise pour ajuster l'arrosage des plantes en conséquence. Il aide à éviter le gaspillage d'eau lorsque des pluies sont prévues.
 
