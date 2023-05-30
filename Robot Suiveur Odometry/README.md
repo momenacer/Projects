@@ -8,7 +8,7 @@ Notre objectif moi et mon binôme consiste à contrôler un robot à deux roues 
 
 **-** Carte Arduino compatible (par exemple, Arduino Uno)
 **-** Pont en H (L298N)
-**-** Deux moteurs DC
+**-** Deux moteurs DC 
 **-** Source d'alimentation
 **-** Connexions et câbles nécessaires
 
