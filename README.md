@@ -1,8 +1,8 @@
 ![1682101429317](https://github.com/momenacer/Projects/assets/127967325/938f7a10-9106-4db7-a069-e10ec8208732)
 
 # Bienvenue sur mon profil GitHub !
-Jeune étudiant passionné par l’automatisation, le contrôle des systèmes et l'optimisation. J’ai une Licence en Automatique (Algérie), je prépare ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (France).
-Accepté par L'Institut Universitaire de Technologie de Nantes Parcours Interdisciplinaire en Technologies Innovantes en Alternance.
+Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique (*Algérie*), je viens d'avoir ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (*France*).
+Accepté par L'université de Nantes Parcours Interdisciplinaire en Technologies Innovantes **en Alternance**.
 Maintenant je suis entrain de chercher une contrat d’apprentissage pour septembre 2023 dans le cadre de mon master 1 Interdisciplinaire en Technologies Innovants.
 
 
