@@ -1,6 +1,6 @@
 # Conversion des anneaux de couleur des résistances
 
-Ce projet est une application développée avec LabVIEW qui permet de convertir les anneaux de couleur des résistances en valeurs numériques et vice versa. L'application fournit une interface conviviale où les utilisateurs peuvent entrer les couleurs des anneaux ou les valeurs numériques pour obtenir le résultat de conversion correspondant.
+Ce projet est une application développée avec LabVIEW qui permet de convertir les anneaux de couleur des résistances en valeurs numériques et vice versa. L'application fournit une interface conviviale où les utilisateurs peuvent entrer les couleurs des anneaux ou les valeurs numériques pour obtenir le résultat de conversion correspondant ainsi qu'une page login pour accéder à l'interface de conversion.
 
 ## Fonctionnalités
 
