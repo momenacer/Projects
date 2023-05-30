@@ -42,7 +42,7 @@ Ce projet est une application développée avec LabVIEW qui permet de convertir 
 
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
 
-1. Fork du dépôt. 
+1. Fork du dépôt.  
 
 2. Créez une branche pour vos modifications : `git checkout -b my-feature`.
 
