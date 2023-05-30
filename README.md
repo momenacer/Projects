@@ -1,7 +1,7 @@
 ![1682101429317](https://github.com/momenacer/Projects/assets/127967325/938f7a10-9106-4db7-a069-e10ec8208732)
 
 # Bienvenue sur mon profil GitHub !
-Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique (*Algérie*), je viens d'avoir ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (*France*).
+Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique (*Algérie*), je viens d'avoir ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (*France*). Je travaile à temps partielle en tant que développeur avec ***[OwlStack](https://www.linkedin.com/company/owl-stack/)***.  
 Accepté par L'université de Nantes Parcours Interdisciplinaire en Technologies Innovantes **en Alternance**.
 Maintenant je suis entrain de chercher une contrat d’apprentissage pour septembre 2023 dans le cadre de mon master 1 Interdisciplinaire en Technologies Innovants.
 
