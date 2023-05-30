@@ -24,6 +24,9 @@ Ce projet avait pour objectif de concevoir un Un robot qui peut suivre une ligne
 l’aide d'une programmation Odometry pour but de déplacer des produits qui ont un grand poids dans un industrie.. Le code source, les diagrammes de séquence et les rapports
 détaillés sont disponibles dans le répertoire.
 
+### [Projet 4 : Conversion des anneaux de couleur des résistances](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calculateur%20de%20code%20de%20couleur%20de%20r%C3%A9sistance)
+Dans ce projet, j'ai réalisé une application qui convertisse les anneaux de couleur des résistances en sa valeur numérique et inversement en utilisant la plateforme **LabVIEW**.Ce projet constitue de deux sous VIs qui seront exploité au sein d'un VI principal qui permettra de sélectionner l'opération de conversion voulue après que l'opérateur se soit identifié. Avec la possibilité de faire plusieurs conversions de suite
+
 ## Contributions et collaborations
 
 Je suis ouvert aux collaborations et aux contributions. Si vous êtes intéressé par l'un de mes projets ou si vous avez des idées de collaboration, n'hésitez pas à me contacter. Je suis toujours prêt à apprendre de nouvelles technologies et à partager mes connaissances avec les autres.
