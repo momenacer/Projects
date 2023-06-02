@@ -7,25 +7,25 @@ Accepté par L'université de Nantes Master 1 Parcours Interdisciplinaire en Tec
 Maintenant je suis entrain de chercher une contrat d’apprentissage pour septembre 2023 dans le cadre de mon master 1 Interdisciplinaire en Technologies Innovants.
 
 
-## Projets universitaires
+## Projets universitaires 
 
 Vous trouvez sur mon profil les projets universitaires les plus intéréssants sur lesquels j'ai travaillé jusqu'à présent :
 
-### [Projet 1 : Serre Agricole Intelligente](https://github.com/momenacer/MENACER_Mohamed/tree/main/Serre%20Agricole%20Intelligente)
+### [Projet 1 : Serre Agricole Intelligente](https://github.com/momenacer/MENACER_Mohamed/tree/main/Serre%20Agricole%20Intelligente) (*cliquer sur le projet pour voir les détails !*)
 Ce projet consistait à concevoir un système qui permet de collecter en temps réel les indicateurs bioclimatiques d’une serre, basé sur l'utilisation des
 réseaux de neurones pour reconnaitre des situations contextuelles à partir des données de capteurs et les arbres de décision pour associer les actions à entreprendre 
 par le système.
 
-### [Projet 2 : Mise en place d’un banc de calibration d’une caméra thermique avec LabVIEW](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calib%20Cam%C3%A9ra%20Thermique)
+### [Projet 2 : Mise en place d’un banc de calibration d’une caméra thermique avec LabVIEW](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calib%20Cam%C3%A9ra%20Thermique) 
 Dans ce projet, j'ai développé un système pour Mesurer la température ambiante autour d’une caméra thermique et la contrôler avec un Peltier en utilisant l’interface LabVIEW et la
 carte d’acquisition LabVIEW pour but de garantir la précision et la fiabilité des images fournies par la caméra.
 
-### [Projet 3 : Réalisation d'un robot suiveur de ligne Odometry](https://github.com/momenacer/MENACER_Mohamed/tree/main/Robot%20Suiveur%20Odometry)
+### [Projet 3 : Réalisation d'un robot suiveur de ligne Odometry](https://github.com/momenacer/MENACER_Mohamed/tree/main/Robot%20Suiveur%20Odometry) (*cliquer sur le projet pour voir les détails !*)
 Ce projet avait pour objectif de concevoir un Un robot qui peut suivre une ligne noire d’une façon autonome à
 l’aide d'une programmation Odometry pour but de déplacer des produits qui ont un grand poids dans un industrie.. Le code source, les diagrammes de séquence et les rapports
 détaillés sont disponibles dans le répertoire.
 
-### [Projet 4 : Conversion des anneaux de couleur des résistances](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calculateur%20de%20code%20de%20couleur%20de%20r%C3%A9sistance)
+### [Projet 4 : Conversion des anneaux de couleur des résistances](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calculateur%20de%20code%20de%20couleur%20de%20r%C3%A9sistance) (*cliquer sur le projet pour voir les détails !*)
 Dans ce projet, j'ai réalisé une application qui convertisse les anneaux de couleur des résistances en sa valeur numérique et inversement en utilisant la plateforme **LabVIEW**.Ce projet constitue de deux sous VIs qui seront exploité au sein d'un VI principal qui permettra de sélectionner l'opération de conversion voulue après que l'opérateur se soit identifié. Avec la possibilité de faire plusieurs conversions de suite
 
 ## Contributions et collaborations
