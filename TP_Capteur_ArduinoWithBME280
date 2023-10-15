@@ -1,5 +1,3 @@
-
-
 const byte Trig = 2; // Broche de déclenchement
 const byte Echo = 3; // Broche de réception
 
@@ -17,28 +15,27 @@ void setup() {
   // Mise au niveau bas de la broche Trig
   digitalWrite(Trig, LOW);
 
-  
 }
-
-
-
 
 void loop() {
   // Envoi d'une impulsion de déclenchement
+
   digitalWrite(Trig, HIGH);
   delayMicroseconds(10);  // Envoi d'une impulsion de déclenchement de 10 microsecondes
   digitalWrite(Trig, LOW);
 
   // Mesure de la durée de l'impulsion réfléchie
   duree = pulseIn(Echo, HIGH);
-  
-  Serial.print("la duree est : ");
-  Serial.println(duree);
+
+  // Affichage de la durée
+    Serial.print("la duree est : ");
+    Serial.println(duree);
   
   // Calcul de la distance en mètres
-  distance = (duree * 0.000001 * 330) / 2; // La formule est D = (t * V) / 2  pour un seul allé
+  distance = (duree * 0.000001 * 330) / 2; // La formule est D = (t * V) / 2  pour un seul aller
 
   // Affichage de la distance mesurée
+
   Serial.print("Distance : ");
   Serial.print(distance);
   Serial.println(" m");
