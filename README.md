@@ -2,10 +2,6 @@
 
 # Bienvenue sur mon profil GitHub !
 Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique (*Algérie*), je viens d'avoir ma deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (*France*). Je travaile à temps partielle en tant que développeur avec ***[OwlStack](https://www.linkedin.com/company/owl-stack/)***.  
-  
-Accepté par L'université de Nantes Master 1 Parcours Interdisciplinaire en Technologies Innovantes **en Alternance**.
-Maintenant je suis entrain de chercher une contrat d’apprentissage pour septembre 2023 dans le cadre de mon master 1 Interdisciplinaire en Technologies Innovants.
-
 
 ## Projets universitaires 
 
