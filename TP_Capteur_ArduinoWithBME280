@@ -1,0 +1,48 @@
+
+
+const byte Trig = 2; // Broche de déclenchement
+const byte Echo = 3; // Broche de réception
+
+float Son = 330.0; // Vitesse du son en m/s
+long duree = 0;    // Durée de l'impulsion en microsecondes
+float distance = 0; // Distance calculée en mètres
+void setup() {
+  // Initialisation du port série
+  Serial.begin(9600);
+
+  // Configuration des broches Trig en sortie et Echo en entrée
+  pinMode(Trig, OUTPUT);
+  pinMode(Echo, INPUT); //tension 5v
+
+  // Mise au niveau bas de la broche Trig
+  digitalWrite(Trig, LOW);
+
+  
+}
+
+
+
+
+void loop() {
+  // Envoi d'une impulsion de déclenchement
+  digitalWrite(Trig, HIGH);
+  delayMicroseconds(10);  // Envoi d'une impulsion de déclenchement de 10 microsecondes
+  digitalWrite(Trig, LOW);
+
+  // Mesure de la durée de l'impulsion réfléchie
+  duree = pulseIn(Echo, HIGH);
+  
+  Serial.print("la duree est : ");
+  Serial.println(duree);
+  
+  // Calcul de la distance en mètres
+  distance = (duree * 0.000001 * 330) / 2; // La formule est D = (t * V) / 2  pour un seul allé
+
+  // Affichage de la distance mesurée
+  Serial.print("Distance : ");
+  Serial.print(distance);
+  Serial.println(" m");
+
+  // Attendez un moment avant de faire une nouvelle mesure
+  delay(1000);
+}
