@@ -1,5 +1,6 @@
 # LVGL ported to the STM32F769 Discovery
-<img src="https://i.ytimg.com/vi/ZUJxbCbBod0/maxresdefault.jpg">
+![station-meteo-digital-multicolore-connectee-par-wifi](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/9099632c-9a7c-4cc5-807f-f9c86994c8de)
+
 
 The [STM32F769 Discovery kit](https://www.st.com/en/evaluation-tools/32f769idiscovery.html) is an affordable development board with:
 * STM32F769NIH6 microcontroller featuring 2 Mbytes of Flash memory and 512 Kbytes of RAM, in BGA216 package
