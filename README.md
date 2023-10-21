@@ -25,7 +25,7 @@ détaillés sont disponibles dans le répertoire.
 ### [Projet 4 : Conversion des anneaux de couleur des résistances](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calculateur%20de%20code%20de%20couleur%20de%20r%C3%A9sistance) (*cliquer sur le projet pour voir les détails !*)
 Dans ce projet, j'ai réalisé une application qui convertisse les anneaux de couleur des résistances en sa valeur numérique et inversement en utilisant la plateforme **LabVIEW**.Ce projet constitue de deux sous VIs qui seront exploité au sein d'un VI principal qui permettra de sélectionner l'opération de conversion voulue après que l'opérateur se soit identifié. Avec la possibilité de faire plusieurs conversions de suite
 
-### [Projet 5 : Realisation d'une station météo](https://github.com/momenacer/MENACER_Mohamed/tree/main/Calculateur%20de%20code%20de%20couleur%20de%20r%C3%A9sistance) (*cliquer sur le projet pour voir les détails !*)
+### [Projet 5 : Realisation d'une station météo](https://github.com/momenacer/MENACER_Mohamed/tree/main/Station%20meteo) (*cliquer sur le projet pour voir les détails !*)
 Ce projet de station météo utilise la carte STM32F746G-DISCOVERY de STMicroelectronics pour collecter, afficher et stocker des données météorologiques. Cette station météo est capable de mesurer la température, l'humidité, la pression atmosphérique, la vitesse et la direction du vent, la quantité de pluie et d'afficher ces données sur un écran LCD intégré.
 
 ## Contributions et collaborations
