@@ -1,5 +1,5 @@
 # STATION METEO project with STM32F746G-Discovery
-![station-meteo-digital-multicolore-connectee-par-wifi](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/9099632c-9a7c-4cc5-807f-f9c86994c8de)
+![IMG_1579](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/3173e0e3-0ee6-47eb-b10f-8e268588a409)
 
 
 # Projet de Station Météorologique - Notre projet de Master 1 en Systèmes Embarqués
@@ -66,5 +66,5 @@ Ce README fournit un aperçu du projet de la Station Météorologique, décrivan
 
 
 ## Get started
-- Clone the project: `https://github.com/momenacer/MENACER_Mohamed/tree/b455dd7db336c4e8d53eeb02eee131fec6853be1/Station%20meteo/stationMeteo_prjt`
+- Clone the project: `git clone https://github.com/momenacer/MENACER_Mohamed.git`
 - Import into STM32CubeIDE
