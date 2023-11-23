@@ -2,7 +2,7 @@
 ![CAPS](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/07aaf58e-e79f-4df1-be06-6079f712f93d)
 
 # Bienvenue sur mon profil GitHub !
-Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique (*Algérie*), et une deuxième Licence EEA à l’Ecole Universitaire de Physique et Ingénierie (*France*). Je travaile à temps partielle en tant que développeur avec ***[OwlStack](https://www.linkedin.com/company/owl-stack/)***.  
+Jeune étudiant passionné par les nouvelles technologies, la robotique et **l'IOT**. J’ai une Licence en Automatique et un Master 1 Objet Connecté (*en cours..*). Je travaile à temps partielle en tant que développeur et bêta testeur avec ***[OwlStack](https://www.linkedin.com/company/owl-stack/)***.  
 
 ## Projets universitaires 
 
