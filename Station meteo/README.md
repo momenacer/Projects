@@ -1,5 +1,6 @@
 # LVGL ported to the STM32F769 Discovery
-<img src="https://i.ytimg.com/vi/ZUJxbCbBod0/maxresdefault.jpg">
+![station-meteo-digital-multicolore-connectee-par-wifi](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/9099632c-9a7c-4cc5-807f-f9c86994c8de)
+
 
 # Projet de Station Météorologique - Projet de Master en Systèmes Embarqués
 
