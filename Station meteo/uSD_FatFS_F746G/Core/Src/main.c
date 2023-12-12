@@ -161,7 +161,7 @@ uint8_t i=0;
 /* Ecran On == 0 */
 
 uint8_t DisplayState = 0;
-
+uint8_t etat=0;
 
 extern I2C_HandleTypeDef hi2c1;
 extern UART_HandleTypeDef huart1;
@@ -205,6 +205,7 @@ RTC_DateTypeDef sDate;
 uint32_t previousSeconds1 = 0;
 uint32_t previousSeconds2 = 0;
 uint32_t previousSeconds3 = 0;
+uint32_t previousSecondsX = 0;
 
 uint32_t previousMinutes =  0;
 uint32_t previousMinutes2 = 0;
@@ -214,7 +215,7 @@ uint32_t previousMinutes4 = 0;
 
 char buff[130];  // Chaîne pour stocker l'heure formatée en secondes
 char buff2[130];  // Chaîne pour stocker l'heure formatée en minutes
-
+uint8_t q=0;
 /* Acquisition choisi par l'utilisateur */
 
 uint8_t acquisition = 1;
@@ -263,6 +264,8 @@ float tab_vitesse[1000];
 	uint8_t wtextP[] = "****** Pluie ******\n";
 	uint8_t wtextPr[] = "****** Pression ******\n";
 	uint8_t wtextV[] = "****** Vitesse ******\n";
+	uint8_t wtextD[] = "****** Direction wind ******\n";
+
 	uint8_t workBuffer[_MAX_SS];
 
 /* Buffers of sensors ( Convertir les valeurs des capteurs en chaine de caractères ) */
@@ -498,6 +501,18 @@ int main(void)
 	  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	  /* Chaque 30 secondes en etteint l'ecran  */
+
+	  	  if (DisplayState==0 && (currentSeconds - previousSecondsX) >= 1) {
+	  			q++;
+	  			if(q==30){
+	  				BSP_LCD_DisplayOff();
+	  				DisplayState=1;
+	  				q=0;
+	  			}
+
+	  			previousSecondsX = currentSeconds; // Mettre à jour le temps précédent
+	  	  }
 
 	  /* Chaque minute en calcule la quantité de pluie  */
 
@@ -519,14 +534,19 @@ int main(void)
 	  }
 
 
-	  /* On stock chaque 60 minute en réel mais la en test en stock chaque 5 minutes */
+	  /* On stock chaque 60 minute en réel mais la en test en stock chaque 4 minutes */
 
-	  if ((currentMinutes - previousMinutes4) >= 5) {
+	  if ((currentMinutes - previousMinutes4) >= 4) {
+
+	    BSP_LCD_Clear(LCD_COLOR_WHITE);
+		  sprintf(buff2, " STOCKING ! ! ! wait for it ");
+	  	  LCD_LOG_SetHeader((uint8_t *) buff2);
+
 
 		if(k==0)
-			ack=  5*60/acquisition;
+			ack=  4*60/acquisition;
 		else
-			ack=  5 / acquisition;
+			ack=  4 / acquisition;
 
 		/*##-2- Register the file system object to the FatFs module ##############*/
 		 if(f_mount(&SDFatFS, (TCHAR const*)SDPath, 0) != FR_OK)
@@ -546,7 +566,7 @@ int main(void)
 		   else
 		   {
 			 /*##-4- Create and Open a new text file object with write access #####*/
-			 if(f_open(&SDFile, "Stck.TXT", FA_CREATE_ALWAYS | FA_WRITE) != FR_OK)
+			 if(f_open(&SDFile, "Stck.CSV", FA_CREATE_ALWAYS | FA_WRITE) != FR_OK)
 			 {
 			   /* 'STM32.TXT' file Open for write Error */
 			   Error_Handler();
@@ -635,6 +655,18 @@ int main(void)
 
 	   s=0;
 
+	   /* Revenir à une des pages aprés que le sotckage termine */
+
+	   if(page==0)
+		   BSP_LCD_DrawBitmap(0, 0, (uint8_t *)file3);
+	   else if(page==1)
+		   BSP_LCD_DrawBitmap(0, 0, (uint8_t *)file2);
+	   else if(page==2)
+		   BSP_LCD_DrawBitmap(0, 0, (uint8_t *)file1);
+	   else{}
+
+
+
 		previousMinutes4 = currentMinutes; // Mettre à jour le temps précédent
 	}
 
@@ -705,11 +737,11 @@ int main(void)
 
 		  	  	  	   /* Afficher les valeurs des 3 capteurs Humidité-Pression-Température sur la page 1 */
 
-					   sprintf((char *)tx_buffer_lps22hh, "Temperature is %.2f \r\n", temperature_degC);
+					   sprintf((char *)tx_buffer_lps22hh, "Temperature is %.2fC\r\n", temperature_degC);
 					   BSP_LCD_SetTextColor(LCD_COLOR_BLUE); // Couleur du texte
 					   BSP_LCD_DisplayStringAt(28, 133, (uint8_t *)tx_buffer_lps22hh, LEFT_MODE);
 
-					   sprintf((char *)tx_buffer_lps22hh2, "Pressure is %.2f\r\n", pressure_hPa);
+					   sprintf((char *)tx_buffer_lps22hh2, "Pressure is %.2f hPa\r\n", pressure_hPa);
 					   BSP_LCD_SetTextColor(LCD_COLOR_BLUE); // Couleur du texte
 					   BSP_LCD_DisplayStringAt(10, 230, (uint8_t *)tx_buffer_lps22hh2, CENTER_MODE);
 
@@ -725,11 +757,11 @@ int main(void)
 
 						/* Afficher les valeurs des 3 capteurs Pluie-vitesse-direction sur la page 2 */
 
-						sprintf((char *)tab_pluie, "Rain is %.2f \r\n", quantPluie);
+						sprintf((char *)tab_pluie, "Rain is %.2f mm\r\n", quantPluie);
 						BSP_LCD_SetTextColor(LCD_COLOR_BLUE); // Couleur du texte
 						BSP_LCD_DisplayStringAt(55, 133, (uint8_t *)tab_pluie, LEFT_MODE);
 
-						sprintf((char *)tab_vitesse, "Wind is %.2f\r\n", vitesse_total);
+						sprintf((char *)tab_vitesse, "Wind is %.2f km/h\r\n", vitesse_total);
 						BSP_LCD_SetTextColor(LCD_COLOR_BLUE); // Couleur du texte
 						BSP_LCD_DisplayStringAt(22, 230, (uint8_t *)tab_vitesse, CENTER_MODE);
 
@@ -791,7 +823,7 @@ int main(void)
 	  /* Si l'utilisateur a touché l'écran */
 
 	   if (ts_int == 1) {
-
+		   q=0;
 		   /* Si le click vient de la page 0 */
 
 		   if(page==0 && (isPointInsideButton3(x, y) || isPointInsideButton4(x, y) || isPointInsideButton5(x, y) || isPointInsideButton6(x, y)) ){
@@ -1061,15 +1093,14 @@ void interfaceGRAPH(){
 /* Fonction d'interruption contients deux interruption soit de la touch screen soit de bouton pour allumer ou eteindre LCD */
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
-	if (GPIO_Pin == USER_BTN_Pin) {
-		DisplayState == 0 ? BSP_LCD_DisplayOn() : BSP_LCD_DisplayOff();
-		DisplayState = DisplayState ^ 1;
-		if(DisplayState==1){
-			  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_10, 0);
-			  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_9, 0);
-			  HAL_GPIO_WritePin(GPIOH, GPIO_PIN_11, 0);		}
-
+	if (GPIO_Pin == USER_BTN_Pin){
+	        BSP_LCD_DisplayOn();
+	        DisplayState=0;
 	}
+
+
+
+
 
 	if (GPIO_Pin == TS_INT_Pin ) {
 		BSP_TS_GetState(TS_State);
