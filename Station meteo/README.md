@@ -7,6 +7,9 @@ https://github.com/momenacer/MENACER_Mohamed/assets/127967325/31a3df95-9935-4ca7
 Vous pouvez toujours voir la video complète sur le lien suivant.
 ***https://drive.google.com/file/d/1pCxRHahZ02CtE7TeV9OstVMWICPD7I4X/view?usp=sharing***
 
+Ou sur YouTube : 
+
+***https://www.youtube.com/watch?v=qtyiucUrWTw&ab_channel=MohamedMENACER***
 ## Introduction
 
 Ce projet de la Station Météorologique vise à relever le défi important du changement climatique en utilisant un système embarqué " STM32 ". L'impact de l'activité humaine sur le réchauffement climatique est désormais indéniable, et la nécessité de surveiller et de comprendre les modèles météorologiques n'a jamais été aussi cruciale. Ce projet, inspiré du "**Weather Shield**" de Sparkfun, utilise la carte ***STM32F746G Discovery*** pour créer une station météo complète capable de mesurer divers paramètres météorologiques.
