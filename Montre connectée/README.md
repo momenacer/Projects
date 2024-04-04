@@ -1,6 +1,15 @@
 # Projet ESP32-WROVER-KIT
 
-Ce projet vise à développer une application pour l'ESP32-WROVER-KIT, implémentant les fonctionnalités suivantes :
+## Introduction
+
+Ce projet est conçu pour explorer plusieurs aspects de la carte ESP32-WROVER-KIT, notamment ses capacités de connectivité Wi-Fi et Bluetooth, son écran graphique intégré, son accès à l'heure via Internet, son utilisation de capteurs externes via l'I2C, et bien plus encore. En combinant ces fonctionnalités, nous créerons une application robuste et interactive qui peut être utilisée dans divers scénarios IoT.
+
+Dans cette introduction, nous allons présenter brièvement les objectifs de ce projet " Montre connectée ", discuter des fonctionnalités principales que nous allons implémenter.
+
+## Objectifs du Projet
+
+L'objectif principal de ce projet est de concevoir et de mettre en œuvre **Une Montre connectée** en utilisant une carte ESP32 WROVER KIT. La Montre devrait être capable de mesurer les paramètres suivants :
+
 
 - Utilisation du driver I2C ESPRESSIF.
 - Connexion à Internet et récupération de l’heure sur un serveur NTP.
@@ -13,9 +22,7 @@ Ce projet vise à développer une application pour l'ESP32-WROVER-KIT, implémen
 ## Installation
 
 1. Clonez ce dépôt sur votre ordinateur :
-git clone https://github.com/votre_nom/projet-esp32-wrover-kit.git
-
-2. Assurez-vous d'avoir les outils de développement nécessaires installés sur votre système.
+2. Assurez-vous d'avoir le logiciel Espressif-IDE installé sur votre système.
 3. Configurez votre environnement de développement selon les spécifications de votre plateforme.
 
 ## Utilisation
@@ -24,10 +31,8 @@ git clone https://github.com/votre_nom/projet-esp32-wrover-kit.git
 2. Alimentez votre ESP32-WROVER-KIT.
 3. L'application devrait démarrer et afficher les informations sur l'écran.
 
-## Contribution
+## Conclusion
 
-Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet, n'hésitez pas à proposer des pull requests.
-
-## Licence
-
-Ce projet est sous licence [MIT](LICENSE).
+Ce README fournit un aperçu du projet de la SMontre connectée, décrivant ses objectifs, ses composants matériels et son implémentation logicielle. Pour des informations détaillées, veuillez consulter la documentation du projet et le code source.
+## Get started
+- Clone the project: `git clone https://github.com/momenacer/MENACER_Mohamed/tree/main/Montre%20connect%C3%A9e`
