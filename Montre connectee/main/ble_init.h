@@ -1,8 +1,8 @@
 /*
  * ble_init.h
  *
- *  Created on: 14 mars 2022
- *      Author: herve
+ *  Created on: 14 mars 2024
+ *
  */
 
 #ifndef MAIN_BLE_INIT_H_

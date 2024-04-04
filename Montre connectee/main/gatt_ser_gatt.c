@@ -1,8 +1,8 @@
 /*
  * gatt_profile.c
  *
- *  Created on: 7 mars 2023
- *      Author: herve
+ *  Created on: 7 mars 2024
+ *
  */
 
 #include "gatt_server_profile.h"

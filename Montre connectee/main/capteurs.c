@@ -2,7 +2,7 @@
  * capteurs.c
  *
  *  Created on: 19 mars 2024
- *      Author: xx
+ *
  */
 
 #include "capteurs.h"

@@ -2,7 +2,7 @@
  * capteurs.h
  *
  *  Created on: 19 mars 2024
- *      Author: x
+ *
  */
 
 /********************** temperature var  *****************////

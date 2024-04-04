@@ -1,8 +1,8 @@
 /*
  * gatt_profile.h
  *
- *  Created on: 13 mars 2022
- *      Author: herve
+ *  Created on: 13 mars 2024
+ *
  */
 #pragma once
 

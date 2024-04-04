@@ -1,8 +1,8 @@
 /*
  * NTP.c
  *
- *  Created on: 21 mars 2023
- *      Author: Rania
+ *  Created on: 21 mars 2024
+ *
  */
 
 #include "NTP.h"
@@ -162,7 +162,7 @@ void wifi_init_sta(void)
         localtime_r(&now, &timeinfo);
 
         // Adjust for France timezone
-        timeinfo.tm_hour += 1; // Add 1 hour for France timezone
+        timeinfo.tm_hour += 2; // Add 1 hour for France timezone
         mktime(&timeinfo); // Re-normalize time after adjustment
 
         // Delay for 1 minute
@@ -185,7 +185,7 @@ void wifi_init_sta(void)
         localtime_r(&now, &timeinfo);
 
         // Adjust for France timezone
-        timeinfo.tm_hour += 1; // Add 1 hour for France timezone
+        timeinfo.tm_hour += 2; // Add 1 hour for France timezone
         mktime(&timeinfo); // Re-normalize time after adjustment
 
         now = mktime(&timeinfo); // Update now with adjusted time

@@ -1,8 +1,8 @@
 /*
  * ble_init.c
  *
- *  Created on: 14 mars 2022
- *      Author: herve
+ *  Created on: 14 mars 2024
+ *
  */
 #include "ble_init.h"
 

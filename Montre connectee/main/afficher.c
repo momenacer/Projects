@@ -47,7 +47,7 @@
 #include "ble_init.h"
 
 /* Littlevgl specific */
-//#include "lvgl.h"
+#include "lvgl.h"
 #include "lvgl_helpers.h"
 
 //******************************************************************
@@ -72,13 +72,11 @@
 
 
 void affichage_temperature();
-TaskHandle_t 	xHandle_1= NULL;
+TaskHandle_t 	xTemp= NULL;
 extern float temperature_degC;
 
 // TEMPERATURE
 // TEMPERATURE
-extern char prof_shared_buf[5];
-extern char temp_tab[5];
 
 
 
@@ -86,7 +84,7 @@ extern char temp_tab[5];
 // MAGNETIC
 
 void affichage_orion();
-TaskHandle_t 	xHandle_2= NULL;
+TaskHandle_t 	xAcceler= NULL;
 extern char *boussole;
 
 // MAGNETIC
@@ -96,7 +94,7 @@ extern char *boussole;
 // ACCEL
 
 void affichage_accel();
-TaskHandle_t 	xHandle_3= NULL;
+TaskHandle_t 	xMagnometre= NULL;
 extern uint16_t nbr_pas;
 
 float Distance;
@@ -140,8 +138,17 @@ lv_obj_t *scr1_label1,			 // Text Object Label
 		 *scr4_label1,
 		 *scr5_label1,
 		 *scr6_label1,
-		 *scr7_label1;
+		 *scr7_label1,
+		 *scr8_label1;
 
+lv_obj_t *temp,			 // Text Object Label
+		 *dist,			 // Text Object Label
+		 *nbrePas,			 // Text Object Label
+		 *direc,
+		 *calor;
+
+
+lv_color_t blue = LV_COLOR_MAKE(3, 72, 73);
 
 int Page = 0;
 
@@ -326,21 +333,66 @@ static void create_GUI_widgets(void)
 	//--------------------------------------------------------------
 	//                      Screen 1 : display horodate
 	//--------------------------------------------------------------
-	    screen[0] = lv_obj_create(NULL, NULL);
-		LV_IMG_DECLARE(img44);
-		lv_obj_t * title1 = lv_img_create(screen[0], NULL);
-		lv_img_set_src(title1, &img44);
-		lv_obj_align(title1, screen[0], LV_ALIGN_CENTER,0,0);
+	    screen[0] = lv_obj_create(NULL,NULL);
+	    lv_obj_set_style_local_bg_color(screen[0], LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, blue);
 
 		//--------------------------------------------------------------
 	    screen[1] = lv_obj_create(NULL, NULL);
+	    lv_obj_set_style_local_bg_color(screen[1], LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, blue);
 
 	    //--------------------------------------------------------------
 	    screen[2] = lv_obj_create(NULL, NULL);
-	    LV_IMG_DECLARE(img33);
-		lv_obj_t * title2 = lv_img_create(screen[2], NULL);
-		lv_img_set_src(title2, &img33);
-		lv_obj_align(title2, screen[2], LV_ALIGN_CENTER,0,0);
+	    lv_obj_set_style_local_bg_color(screen[2], LV_OBJ_PART_MAIN, LV_STATE_DEFAULT, blue);
+
+
+	    temp = lv_label_create(screen[2], NULL);
+
+	   		    			lv_label_set_long_mode(temp, LV_LABEL_LONG_SROLL_CIRC);     /*Circular scroll*/
+	   		    			lv_obj_set_width(temp, 150);
+	   		    			lv_label_set_text(temp, " La temperature est ");
+
+	   		    			lv_obj_set_style_local_text_font(temp, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+	   		    			lv_obj_set_style_local_text_color(temp, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+	   		    			lv_obj_align(temp, NULL, LV_ALIGN_CENTER, 0, -100);
+
+
+		nbrePas = lv_label_create(screen[2], NULL);
+
+								lv_label_set_text(nbrePas, "Pas");
+
+								lv_obj_set_style_local_text_font(nbrePas, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+								lv_obj_set_style_local_text_color(nbrePas, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+								lv_obj_align(nbrePas, NULL, LV_ALIGN_CENTER, 0, -20);
+
+
+		 direc = lv_label_create(screen[2], NULL);
+
+								lv_label_set_long_mode(direc, LV_LABEL_LONG_SROLL_CIRC);     /*Circular scroll*/
+								lv_obj_set_width(direc, 150);
+								lv_label_set_text(direc, " Votre direction maintenant est ");
+
+								lv_obj_set_style_local_text_font(direc, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+								lv_obj_set_style_local_text_color(direc, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+								lv_obj_align(direc, NULL, LV_ALIGN_CENTER, 0, 100);
+
+
+		 calor = lv_label_create(screen[2], NULL);
+
+								lv_label_set_text(calor, "Calories");
+
+								lv_obj_set_style_local_text_font(calor, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+								lv_obj_set_style_local_text_color(calor, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+								lv_obj_align(calor, NULL, LV_ALIGN_CENTER, -100, -20);
+
+
+		dist = lv_label_create(screen[2], NULL);
+
+								lv_label_set_text(dist, "Distance");
+
+								lv_obj_set_style_local_text_font(dist, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+								lv_obj_set_style_local_text_color(dist, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+								lv_obj_align(dist, NULL, LV_ALIGN_CENTER, 100, -20);
+
 
 	    // Charger l'écran 0
 	    lv_scr_load(screen[0]);
@@ -424,6 +476,7 @@ void state_machine()
 	uint8_t state_blink_task = 1;
 	char *TAG ="State_machine Task";
 
+
 	// Local "Queue set" merging the wait of binary semaphores
 	//   coming from the different IRQs
 	QueueSetMemberHandle_t received_semaphore;
@@ -496,9 +549,9 @@ void state_machine()
 			ESP_LOGI(TAG, "ME: Display_update");
 			xSemaphoreTake(Aff_update_Semaphore, 0);
 
-			vTaskResume(xHandle_1);
-			vTaskResume(xHandle_2);
-			vTaskResume(xHandle_3);
+			vTaskResume(xTemp);
+			vTaskResume(xAcceler);
+			vTaskResume(xMagnometre);
 			vTaskResume(timHandle);
 
 			affichage_Time();
@@ -512,6 +565,7 @@ void state_machine()
 			//            function, the state-machine will end it
 			//            before to continue.
 			lv_task_handler();
+
 			lv_obj_del(scr1_label1);
 			lv_obj_del(scr2_label1);
 			lv_obj_del(scr3_label1);
@@ -519,29 +573,44 @@ void state_machine()
 			lv_obj_del(scr5_label1);
 			lv_obj_del(scr6_label1);
 			lv_obj_del(scr7_label1);
+			lv_obj_del(scr8_label1);
 
 
 		}
-		// else:no necessity, the ME go back in 'wait for semaphore'
+
 	}
 }
 //##################################################################
 //##################################################################
 void affichage_Time(){
 
-	// Format time as HH:MM
 
-	char time_str[100];
+	char time_str[50];
 
 			scr4_label1 = lv_label_create(screen[0], NULL);
 
-			strftime(time_str, sizeof(time_str), "%H:%M  %A-%d-%B", &timeinfo);
+			strftime(time_str, sizeof(time_str), "%H  H  %M", &timeinfo);
 
 			// Update label with current time
 
 			lv_label_set_text(scr4_label1, time_str);
 
-			lv_obj_align(scr4_label1, NULL, LV_ALIGN_CENTER,0,40);
+			lv_obj_set_style_local_text_font(scr4_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr4_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+			lv_obj_align(scr4_label1, NULL, LV_ALIGN_CENTER,0,0);
+
+	char date_str[50];
+
+			scr8_label1 = lv_label_create(screen[0], NULL);
+
+			strftime(date_str, sizeof(date_str), "%A  -  %d  -  %B  -  %Y", &timeinfo);
+
+			// Update label with current time
+
+			lv_label_set_text(scr8_label1, date_str);
+			lv_obj_set_style_local_text_font(scr8_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr8_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+			lv_obj_align(scr8_label1, NULL, LV_ALIGN_CENTER,0,40);
 }
 
 //##################################################################
@@ -596,7 +665,16 @@ void affichage_temperature() {
 
 			lv_snprintf(tempbuff, sizeof(tempbuff), "%0.2f", temperature_degC);
 			lv_label_set_text(scr1_label1, tempbuff);
+			lv_obj_set_style_local_text_font(scr1_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr1_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
 			lv_obj_align(scr1_label1, screen[2], LV_ALIGN_CENTER, 0, -80);
+
+
+
+
+
+
+
 
 }
 //##################################################################
@@ -611,6 +689,8 @@ void affichage_orion() {
 
 			lv_snprintf(boussbuff, sizeof(boussbuff), boussole);
 			lv_label_set_text(scr2_label1, boussbuff);
+			lv_obj_set_style_local_text_font(scr2_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr2_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
 			lv_obj_align(scr2_label1, screen[2], LV_ALIGN_CENTER,0, 80);
 
 }
@@ -628,6 +708,8 @@ void affichage_accel(){
 
 			lv_snprintf(pasbuff, sizeof(pasbuff), "%d", nbr_pas);
 			lv_label_set_text(scr3_label1, pasbuff);
+			lv_obj_set_style_local_text_font(scr3_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr3_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
 			lv_obj_align(scr3_label1, NULL, LV_ALIGN_CENTER,0, 0);
 
 
@@ -635,18 +717,22 @@ void affichage_accel(){
 
 		scr5_label1 = lv_label_create(screen[2], NULL);
 
-			lv_snprintf(Distancebuff, sizeof(Distancebuff), "%0.2f metres", Distance);
+			lv_snprintf(Distancebuff, sizeof(Distancebuff), "%0.2f", Distance);
 			lv_label_set_text(scr5_label1, Distancebuff);
-			lv_obj_align(scr5_label1, screen[2], LV_ALIGN_CENTER,80,0);
+			lv_obj_set_style_local_text_font(scr5_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr5_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+			lv_obj_align(scr5_label1, screen[2], LV_ALIGN_CENTER,100,0);
 
 
 	char Caloriesbuff[20];
 
 		scr6_label1 = lv_label_create(screen[2], NULL);
 
-			lv_snprintf(Caloriesbuff, sizeof(Caloriesbuff), "%3.2f Calories", Calories);
+			lv_snprintf(Caloriesbuff, sizeof(Caloriesbuff), "%3.2f", Calories);
 			lv_label_set_text(scr6_label1, Caloriesbuff);
-			lv_obj_align(scr6_label1, screen[2], LV_ALIGN_CENTER ,-80, 0);
+			lv_obj_set_style_local_text_font(scr6_label1, LV_LABEL_PART_MAIN, LV_STATE_DEFAULT, &lv_font_montserrat_16);
+			lv_obj_set_style_local_text_color(scr6_label1, LV_OBJ_PART_MAIN, LV_STATE_DEFAULT,LV_COLOR_WHITE);
+			lv_obj_align(scr6_label1, screen[2], LV_ALIGN_CENTER ,-100, 0);
 }
 
 
@@ -773,9 +859,9 @@ void app_main(void)
 	// MY PARTY
 	//==============================================================
 
-	xTaskCreate(get_temp_task, "i2c_temperature_task", 2048*2, (void *)0, 10, &xHandle_1);
-	xTaskCreate(get_magnetic_task, "i2c_magnetometre_task", 1024 * 2, (void *)0, 10, &xHandle_2);
-    xTaskCreate(get_accel_task, "i2c_accelerometre_task", 1024 * 2, (void *)0, 10, &xHandle_3);
+	xTaskCreate(get_temp_task, "i2c_temperature_task", 2048*2, (void *)0, 10, &xTemp);
+	xTaskCreate(get_magnetic_task, "i2c_magnetometre_task", 1024 * 2, (void *)0, 10, &xAcceler);
+    xTaskCreate(get_accel_task, "i2c_accelerometre_task", 1024 * 2, (void *)0, 10, &xMagnometre);
 	//==============================================================
 	//==============================================================
 
