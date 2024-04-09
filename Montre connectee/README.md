@@ -31,8 +31,13 @@ L'objectif principal de ce projet est de concevoir et de mettre en œuvre **Une 
 2. Alimentez votre ESP32-WROVER-KIT.
 3. L'application devrait démarrer et afficher les informations sur l'écran.
 
+
 ## Conclusion
 
 Ce README fournit un aperçu du projet de la SMontre connectée, décrivant ses objectifs, ses composants matériels et son implémentation logicielle. Pour des informations détaillées, veuillez consulter la documentation du projet et le code source.
 ## Get started
 - Clone the project: `git clone https://github.com/momenacer/MENACER_Mohamed/tree/main/Montre%20connect%C3%A9e`
+
+
+![430493525_786139200145100_156595996886121732_n](https://github.com/momenacer/MENACER_Mohamed/assets/127967325/b484e457-38e0-4fce-8695-be225882a566)
+
